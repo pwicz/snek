@@ -24,7 +24,7 @@ private:
 	static constexpr int centerX = (Graphics::ScreenWidth - (width * dimension)) / 2;
 	static constexpr int centerY = (Graphics::ScreenHeight - (height * dimension)) / 2;
 	static constexpr int padding = 1 ;
-	static constexpr int borderThickness = 7;
+	static constexpr int borderThickness = 5;
 	int nObstacles = 5;
 	Location obstacles[500];
 	Graphics& gfx;

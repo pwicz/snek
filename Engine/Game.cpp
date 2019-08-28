@@ -83,10 +83,6 @@ void Game::UpdateModel()
 					snake.ChangeBodyColor(rng);
 					snake.Grow();
 
-					do {
-						points[i].Respawn({ xDist(rng), yDist(rng) });
-					} while (snake.DoesColide(points[i].GetLocation()) || brd.DoesColideWithObstacle(points[i].GetLocation()));
-
 					int snakeEatenPoints = snake.GetEatenPoints();
 					if (snakeEatenPoints <= 5) {
 						NewObstacleCreation();
@@ -106,6 +102,10 @@ void Game::UpdateModel()
 							NewObstacleCreation();
 						}
 					}
+
+					do {
+						points[i].Respawn({ xDist(rng), yDist(rng) });
+					} while (snake.DoesColide(points[i].GetLocation()) || brd.DoesColideWithObstacle(points[i].GetLocation()));
 
 					if (snakeEatenPoints == speedPoints[actualSpeedPoint]) {
 						if (actualSpeedPoint < 13)
